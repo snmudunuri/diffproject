@@ -7,7 +7,12 @@ let points2 = 0;
 let winnerCombination = new Array();
 
 function loadAnswers(){
-  n = 100;
+  let n = prompt("Choose the matrix you want to play", "3 OR 4 OR 5");
+
+  while (n<3 || n>5){
+    n = prompt("Please choose valid matrix", "3 OR 4 OR 5");
+  }
+
 winnerCombination = [];
 let answersSet = new Array();
 let current = 0;
