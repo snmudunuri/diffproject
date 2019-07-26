@@ -127,8 +127,10 @@ function gameBoard() {
       document.getElementById("player2").innerHTML = points2;
       reset();
     } else if (player1Selection.length == Math.floor((n * n) / 2) + 1) {
+      alert("It's a draw!!");
       reset();
     } else if (player2Selection.length == (n * n) / 2) {
+      alert("It's a draw!!");
       reset();
     } else {
       if (currentPlayer == 0) {
