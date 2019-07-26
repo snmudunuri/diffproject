@@ -7,7 +7,7 @@ let points2 = 0;
 let winnerCombination = new Array();
 
 function loadAnswers(){
-  n = 3;
+  n = 100;
 winnerCombination = [];
 let answersSet = new Array();
 let current = 0;
