@@ -115,30 +115,34 @@ function gameBoard() {
       player2Selection.sort();
     }
 
-    if (winnerCheck()) {
-      if (currentPlayer == 0) {
-        points1++;
-        alert("Player 1 wins!!");
-      } else {
-        points2++;
-        alert("Player 2 wins!!");
-      }
-      document.getElementById("player1").innerHTML = points1;
-      document.getElementById("player2").innerHTML = points2;
-      reset();
-    } else if (player1Selection.length == Math.floor((n * n) / 2) + 1) {
-      alert("It's a draw!!");
-      reset();
-    } else if (player2Selection.length == (n * n) / 2) {
-      alert("It's a draw!!");
-      reset();
-    } else {
-      if (currentPlayer == 0) {
-        currentPlayer = 1;
-      } else {
-        currentPlayer = 0;
-      }
-    }
+      setTimeout(function() {
+        if (winnerCheck()) {
+          if (currentPlayer == 0) {
+            points1++;
+            alert("Player 1 wins!!");
+          } else {
+            points2++;
+            alert("Player 2 wins!!");
+          }
+          document.getElementById("player1").innerHTML = points1;
+          document.getElementById("player2").innerHTML = points2;
+          reset();
+        } else if (player1Selection.length == Math.floor((n * n) / 2) + 1) {
+          alert("It's a draw!!");
+          reset();
+        } else if (player2Selection.length == (n * n) / 2) {
+          alert("It's a draw!!");
+          reset();
+        } else {
+          if (currentPlayer == 0) {
+            currentPlayer = 1;
+          } else {
+            currentPlayer = 0;
+          }
+        }
+
+      }, 1);
+    
   };
   for (let i = 1; i < colCount; i++) {
     const colId = document.getElementById(i);
